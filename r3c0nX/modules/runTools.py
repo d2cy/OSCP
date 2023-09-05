@@ -1,6 +1,10 @@
 import subprocess
 import sys
-terminal_emulator = "xterm"
+from configparser import ConfigParser, ExtendedInterpolation
+config = ConfigParser(interpolation=ExtendedInterpolation())
+config.read('./config/config.ini')
+
+terminal_emulator = config['General']['terminal']
 
 def run_tools(command):
     try:
@@ -12,3 +16,4 @@ def run_tools(command):
     except:
         print('[-] Error Running Tool')
         sys.exit(1)
+
